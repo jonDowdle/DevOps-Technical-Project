@@ -5,7 +5,7 @@
   "homepage": "",
   "main": "src",
   "keywords": [
-    "feathers"
+    "cats", "api"
   ],
   "author": {
     "name": "Jon Dowdle",
@@ -25,27 +25,18 @@
     "test": "npm run eslint && npm run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "start": "node src/",
+    "start-dev": "nodemon src/",
     "mocha": "mocha test/ --recursive --exit"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "compression": "^1.7.1",
-    "cors": "^2.8.4",
-    "feathers": "^2.2.3",
-    "feathers-configuration": "^0.4.2",
-    "feathers-errors": "^2.9.2",
-    "feathers-hooks": "^2.1.2",
-    "feathers-hooks-common": "^3.10.0",
-    "feathers-rest": "^1.8.1",
-    "feathers-socketio": "^2.0.1",
-    "helmet": "^3.9.0",
-    "serve-favicon": "^2.4.5",
-    "winston": "^2.4.0"
+    "axios": "^0.17.1",
+    "express": "^4.16.2",
+    "ioredis": "^3.2.1",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
     "mocha": "^4.0.1",
-    "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "nodemon": "^1.12.1"
   }
 }

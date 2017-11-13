@@ -1,10 +1,19 @@
 version: '3'
 services:
   webapp:
-    build: 
+    build:
       dockerfile: Dockerfile
       context: .
+    volumes:
+      - .:/deploy
+      - /deploy/node_modules
     ports:
-      - "3030:3030"
+      - "8080:${PORT}"
+    command: yarn run start-dev
+    links:
+      - redis
+    environment:
+      - CAT_API_KEY=${CAT_API_KEY}
+      - PORT=${PORT}
   redis:
     image: redis:3.2
