@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 
 const CatApi = require('./lib/CatApi');
-const catApi = new CatApi( CAT_API_KEY )
+const catApi = new CatApi( CAT_API_KEY );
 const CatHistory = require('./lib/CatHistory');
 
 app.get('/cat', (req, res) => {
@@ -16,18 +16,18 @@ app.get('/cat', (req, res) => {
   }).then( data => {
     res.send(data);
   });
-})
+});
 
 app.get('/history', (req, res) => {
   CatHistory.get().then( data => {
     let decodedList = decodeURI(data);
     res.send(JSON.parse(`[${decodedList}]`));
   });
-})
+});
 
 app.listen(PORT, () => {
-  console.log(`Cat API listening on ${PORT}!`)
-})
+  console.log(`Cat API listening on ${PORT}!`);
+});
 
 process.on('unhandledRejection', (reason, p) =>
   console.error('Unhandled Rejection at: Promise ', p, reason)
