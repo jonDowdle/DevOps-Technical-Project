@@ -8,12 +8,13 @@ services:
       - .:/deploy
       - /deploy/node_modules
     ports:
-      - "8080:${PORT}"
-    command: yarn run start-dev
+      - "${PORT}:${CONTAINER_PORT}"
+    command: yarn run start
     links:
       - redis
     environment:
       - CAT_API_KEY=${CAT_API_KEY}
-      - PORT=${PORT}
+      - PORT=8080
+      - CONTAINER_PORT=8080
   redis:
     image: redis:3.2

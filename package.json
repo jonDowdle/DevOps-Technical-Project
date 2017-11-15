@@ -14,29 +14,22 @@
   "contributors": [],
   "bugs": {},
   "directories": {
-    "lib": "src",
-    "test": "test/"
+    "lib": "src"
   },
   "engines": {
     "node": ">= 6.0.0",
     "yarn": ">= 0.18.0"
   },
   "scripts": {
-    "test": "npm run eslint && npm run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
-    "start": "node src/",
-    "start-dev": "nodemon src/",
-    "mocha": "mocha test/ --recursive --exit"
+    "start": "nodemon src/"
   },
   "dependencies": {
     "axios": "^0.17.1",
     "express": "^4.16.2",
     "ioredis": "^3.2.1",
-    "xml2js": "^0.4.19"
-  },
-  "devDependencies": {
-    "eslint": "^4.11.0",
-    "mocha": "^4.0.1",
+    "xml2js": "^0.4.19",
     "nodemon": "^1.12.1"
-  }
+  },
+  "devDependencies": {}
 }
